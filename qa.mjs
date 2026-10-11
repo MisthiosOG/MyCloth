@@ -1,0 +1,34 @@
+export default async function run(page) {
+  await page.setViewportSize({ width: 390, height: 844 });
+  const result = {};
+  result.mobileHeaderOrder = await page.evaluate(() => [...document.querySelector('.header-inner').children].map(el => el.className));
+  result.overflow = await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth);
+  await page.getByRole('button', { name: 'Atasan' }).click();
+  result.filterCount = await page.locator('.product-card').count();
+  await page.getByRole('searchbox', { name: 'Cari pakaian' }).fill('denim');
+  result.searchCount = await page.locator('.product-card').count();
+  await page.getByRole('button', { name: /Buka daftar pilihan/ }).click();
+  result.savedPanelOpen = await page.locator('#saved-panel.is-open').count() === 1;
+  await page.getByRole('button', { name: 'Tutup daftar pilihan' }).click();
+  await page.getByRole('searchbox', { name: 'Cari pakaian' }).fill('');
+  await page.getByRole('button', { name: 'Semua' }).click();
+  await page.getByRole('button', { name: 'Tambah ke cart' }).first().click();
+  result.cartCount = await page.locator('.cart-count').textContent();
+  await page.getByRole('button', { name: 'Buka keranjang' }).click();
+  result.cartOpen = await page.locator('#cart-panel.is-open').count() === 1;
+  await page.getByRole('button', { name: 'Checkout' }).click();
+  result.checkoutOpen = await page.locator('#checkout-dialog[open]').count() === 1;
+  await page.getByLabel('Nama lengkap').fill('Tester Katalog');
+  await page.getByLabel('Nomor WhatsApp').fill('08123456789');
+  await page.getByLabel('Alamat pengiriman').fill('Jl. Kain No. 1');
+  await page.getByLabel('Transfer bank').check();
+  await page.getByRole('button', { name: 'Kirim pesanan' }).click();
+  result.checkoutFeedback = await page.locator('#checkout-feedback').textContent();
+  await page.getByRole('button', { name: 'Tutup checkout' }).click();
+  await page.getByRole('button', { name: 'Tutup keranjang' }).click();
+  await page.locator('[data-detail="linen-overshirt"]').click();
+  result.dialogOpen = await page.locator('#product-dialog[open]').count() === 1;
+  await page.getByRole('button', { name: 'Tutup detail' }).click();
+  result.dialogClosed = await page.locator('#product-dialog[open]').count() === 0;
+  return result;
+}
