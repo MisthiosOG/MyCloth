@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Katalog pakaian harian dengan siluet bersih dan bahan yang dipilih dengan tenang." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2320221f'/%3E%3Cpath d='M8 8h16v16H8z' fill='%23a95236'/%3E%3C/svg%3E" />
+    <title>MyCloth | Katalog pakaian</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#koleksi">Lewati ke koleksi</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="#atas" aria-label="MyCloth, kembali ke atas">My<span>Cloth</span></a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span>Menu</span><i aria-hidden="true"></i>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Navigasi utama">
+          <a href="#koleksi">Koleksi</a>
+          <a href="#catatan">Catatan bahan</a>
+          <a href="#tentang">Tentang</a>
+        </nav>
+        <div class="header-actions">
+          <button class="bag-button" type="button" aria-label="Buka daftar pilihan" aria-controls="saved-panel">
+            <span aria-hidden="true">♡</span><b class="saved-count">0</b>
+          </button>
+          <button class="cart-button" type="button" aria-label="Buka keranjang" aria-controls="cart-panel">
+            <svg class="cart-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3.5 4h2l1.6 10.1a2 2 0 0 0 2 1.7h7.8a2 2 0 0 0 1.9-1.4L20.5 7H6.1" />
+              <path d="M9 19.5h.01M17 19.5h.01" />
+            </svg>
+            <b class="cart-count">0</b>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="atas">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Katalog pakaian harian</p>
+          <h1 id="hero-title">Pakai yang terasa <em>seperti kamu.</em></h1>
+          <p class="hero-text">Potongan yang tenang, bahan yang bisa bernapas, dan warna yang tinggal lebih lama dari satu musim.</p>
+          <a class="text-link" href="#koleksi">Lihat pilihan hari ini <span aria-hidden="true">↘</span></a>
+        </div>
+      </section>
+
+      <section id="koleksi" class="catalog-section" aria-labelledby="collection-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">Koleksi kecil</p><h2 id="collection-title">Pilih ritmemu.</h2></div>
+          <p class="result-count" aria-live="polite"><span id="result-count">6</span> pilihan</p>
+        </div>
+        <div class="catalog-tools">
+          <div class="filter-row" role="group" aria-label="Filter kategori">
+            <button class="filter-chip is-active" type="button" data-filter="Semua">Semua</button>
+            <button class="filter-chip" type="button" data-filter="Atasan">Atasan</button>
+            <button class="filter-chip" type="button" data-filter="Bawahan">Bawahan</button>
+            <button class="filter-chip" type="button" data-filter="Outer">Outer</button>
+          </div>
+          <label class="search-field"><span class="sr-only">Cari pakaian</span><input id="search-input" type="search" placeholder="Cari pakaian" /><span aria-hidden="true">⌕</span></label>
+        </div>
+        <div id="product-grid" class="product-grid" aria-live="polite"></div>
+        <div id="empty-state" class="empty-state" hidden>
+          <p class="eyebrow">Belum ketemu</p><h3>Coba kata yang lebih sederhana.</h3><button id="reset-search" class="outline-button" type="button">Tampilkan semua</button>
+        </div>
+        <div id="error-state" class="error-state" hidden role="alert">Katalog gagal dimuat. Segarkan halaman untuk mencoba lagi.</div>
+      </section>
+
+      <section id="catatan" class="material-note" aria-labelledby="material-title">
+        <div class="material-image" role="img" aria-label="Tekstur kain linen alami dengan warna krem"></div>
+        <div class="material-copy"><p class="eyebrow">Catatan bahan</p><h2 id="material-title">Kain yang ikut bergerak.</h2><p>Kami mulai dari sentuhan: linen yang mengering cepat, katun yang tidak rewel, dan rajut ringan untuk hari yang panjang.</p><a class="text-link" href="#tentang">Baca cara kami memilih <span aria-hidden="true">↘</span></a></div>
+      </section>
+
+      <section id="tentang" class="about-section" aria-labelledby="about-title">
+        <p class="eyebrow">MyCloth / 2026</p><h2 id="about-title">Sedikit barang.<br /><em>Banyak dipakai.</em></h2><p>Katalog ini adalah draft koleksi. Detail harga, stok, dan ukuran akan ditambahkan setelah data produk tersedia.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>© 2026 GodPowfuck</span><span>Pakaian untuk hari biasa.</span></footer>
+    <aside id="saved-panel" class="saved-panel" aria-hidden="true" aria-labelledby="saved-title"><div class="saved-header"><h2 id="saved-title">Pilihanmu</h2><button class="close-saved" type="button" aria-label="Tutup daftar pilihan">×</button></div><div id="saved-list" class="saved-list"><p>Belum ada yang disimpan.</p></div></aside>
+    <aside id="cart-panel" class="saved-panel cart-panel" aria-hidden="true" aria-labelledby="cart-title"><div class="saved-header"><h2 id="cart-title">Keranjang</h2><button class="close-cart" type="button" aria-label="Tutup keranjang">×</button></div><div id="cart-list" class="saved-list"><p>Keranjang masih kosong.</p></div><div class="cart-footer"><p>Harga dan ongkir dikonfirmasi setelah data produk tersedia.</p><button id="checkout-button" class="checkout-button" type="button" disabled>Checkout</button></div></aside>
+    <dialog id="product-dialog" class="product-dialog"><button class="dialog-close" type="button" aria-label="Tutup detail">×</button><div id="dialog-content"></div></dialog>
+    <dialog id="checkout-dialog" class="checkout-dialog"><button class="dialog-close checkout-close" type="button" aria-label="Tutup checkout">×</button><div class="checkout-content"><p class="eyebrow">Checkout</p><h2>Lengkapi pesanan.</h2><p class="checkout-intro">Isi data pengiriman dan pilih cara pembayaran yang kamu inginkan.</p><div id="checkout-summary" class="checkout-summary"></div><form id="checkout-form"><div class="form-section"><p class="form-section-title">Data pengiriman</p><label>Nama lengkap<input name="name" autocomplete="name" required placeholder="Nama kamu" /></label><label>Nomor WhatsApp<input name="phone" type="tel" autocomplete="tel" required placeholder="08xxxxxxxxxx" /></label><label>Alamat pengiriman<textarea name="address" autocomplete="street-address" required placeholder="Alamat lengkap"></textarea></label></div><fieldset class="payment-section"><legend>Pilih pembayaran</legend><label class="payment-option"><input type="radio" name="payment" value="Transfer bank" required /><span><b>Transfer bank</b><small>Detail rekening dikirim setelah pesanan diterima</small></span><img src="BankPayment.png" alt="Ikon transfer bank" /></label><label class="payment-option"><input type="radio" name="payment" value="QRIS" /><span><b>QRIS</b><small>Bayar dengan aplikasi dompet digital</small></span><img src="Qris.png" alt="Ikon QRIS" /></label></fieldset><button class="checkout-button" type="submit">Kirim pesanan</button><p id="checkout-feedback" class="checkout-feedback" role="status"></p></form></div></dialog>
+    <script src="script.js"></script>
+  </body>
+</html>
