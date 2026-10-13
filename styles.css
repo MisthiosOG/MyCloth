@@ -2,6 +2,7 @@
 html,body{overflow-x:clip}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{background-image:linear-gradient(rgba(169,82,54,.24) 1px,transparent 1px),linear-gradient(90deg,rgba(169,82,54,.24) 1px,transparent 1px)!important;background-size:28px 28px!important;background-position:center top!important}
+.hero,.catalog-section,.about-section{background:var(--paper)}
 .hero-mark{display:inline-block;padding:.02em .1em .08em;border:1px solid currentColor;box-shadow:4px 4px 0 rgba(32,34,31,.12)}.hero-mark-ink{background:var(--ink);color:var(--paper)}.hero-mark-clay{background:var(--clay);color:var(--paper);border-color:var(--clay);box-shadow:4px 4px 0 rgba(169,82,54,.2)}
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}.reveal.is-visible{opacity:1;transform:none}@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 @media(max-width:780px){html{scroll-padding-top:64px}}
