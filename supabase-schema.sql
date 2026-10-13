@@ -36,6 +36,10 @@ drop policy if exists "Admins can update catalog settings" on public.catalog_set
 create policy "Admins can update catalog settings"
   on public.catalog_settings for update to authenticated using (true) with check (true);
 
+drop policy if exists "Admins can insert catalog settings" on public.catalog_settings;
+create policy "Admins can insert catalog settings"
+  on public.catalog_settings for insert to authenticated with check (id = true);
+
 drop policy if exists "Admins can insert products" on public.products;
 create policy "Admins can insert products"
   on public.products for insert to authenticated with check (true);
