@@ -9,13 +9,32 @@ create table if not exists public.products (
   created_at timestamptz not null default now()
 );
 
-alter table public.products add column if not exists regular_enabled boolean not null default false;
+create table if not exists public.catalog_settings (
+  id boolean primary key default true check (id = true),
+  boxy_enabled boolean not null default true,
+  regular_enabled boolean not null default false,
+  updated_at timestamptz not null default now()
+);
+
+insert into public.catalog_settings (id, boxy_enabled, regular_enabled)
+values (true, true, false)
+on conflict (id) do nothing;
 
 alter table public.products enable row level security;
 
 drop policy if exists "Anyone can read products" on public.products;
 create policy "Anyone can read products"
   on public.products for select using (true);
+
+alter table public.catalog_settings enable row level security;
+
+drop policy if exists "Anyone can read catalog settings" on public.catalog_settings;
+create policy "Anyone can read catalog settings"
+  on public.catalog_settings for select using (true);
+
+drop policy if exists "Admins can update catalog settings" on public.catalog_settings;
+create policy "Admins can update catalog settings"
+  on public.catalog_settings for update to authenticated using (true) with check (true);
 
 drop policy if exists "Admins can insert products" on public.products;
 create policy "Admins can insert products"
