@@ -9,6 +9,8 @@ create table if not exists public.products (
   created_at timestamptz not null default now()
 );
 
+alter table public.products add column if not exists regular_enabled boolean not null default false;
+
 alter table public.products enable row level security;
 
 drop policy if exists "Anyone can read products" on public.products;
@@ -18,6 +20,10 @@ create policy "Anyone can read products"
 drop policy if exists "Admins can insert products" on public.products;
 create policy "Admins can insert products"
   on public.products for insert to authenticated with check (true);
+
+drop policy if exists "Admins can update products" on public.products;
+create policy "Admins can update products"
+  on public.products for update to authenticated using (true) with check (true);
 
 drop policy if exists "Admins can delete products" on public.products;
 create policy "Admins can delete products"
