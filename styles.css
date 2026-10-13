@@ -11,7 +11,7 @@ html{scroll-behavior:smooth;scroll-padding-top:72px}
 @media(max-width:340px){.material-note{grid-template-columns:64px minmax(0,1fr)}.material-copy{padding-inline:14px}.material-copy h2{font-size:32px}}
 @media(max-width:380px){.product-grid{grid-template-columns:1fr}.product-visual{aspect-ratio:1/1.12}}
 @media(min-width:781px) and (max-width:1050px){.product-grid{grid-template-columns:repeat(2,1fr)}}
-.hero{display:block;padding-top:88px;padding-bottom:112px}.hero-copy{max-width:700px}
+.hero{display:block;padding-top:72px;padding-bottom:52px}.hero-copy{max-width:700px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.saved-panel{transition:none}}
 .payment-option img{width:42px;height:30px;object-fit:contain;display:block}
 .checkout-button{background:#315c4a}.checkout-button:hover,.checkout-button:focus-visible{background:#244638}

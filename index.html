@@ -50,7 +50,7 @@
       <section id="koleksi" class="catalog-section reveal" aria-labelledby="collection-title">
         <div class="section-heading">
           <div><p class="eyebrow">Koleksi kecil</p><h2 id="collection-title">Pilih ritmemu.</h2></div>
-          <p class="result-count" aria-live="polite"><span id="result-count">6</span> pilihan</p>
+          <p class="result-count" aria-live="polite"><span id="result-count">0</span> pilihan</p>
         </div>
         <div class="catalog-tools">
           <div class="filter-row" role="group" aria-label="Filter kategori">
@@ -62,8 +62,9 @@
           <label class="search-field"><span class="sr-only">Cari pakaian</span><input id="search-input" type="search" placeholder="Cari pakaian" /><span aria-hidden="true">⌕</span></label>
         </div>
         <div id="product-grid" class="product-grid" aria-live="polite"></div>
+        <div id="loading-state" class="loading-state">Memuat katalog...</div>
         <div id="empty-state" class="empty-state" hidden>
-          <p class="eyebrow">Belum ketemu</p><h3>Coba kata yang lebih sederhana.</h3><button id="reset-search" class="outline-button" type="button">Tampilkan semua</button>
+          <p class="eyebrow" id="empty-eyebrow">Belum ada produk</p><h3 id="empty-title">Produk belum diterbitkan.</h3><button id="reset-search" class="outline-button" type="button" hidden>Tampilkan semua</button>
         </div>
         <div id="error-state" class="error-state" hidden role="alert">Katalog gagal dimuat. Segarkan halaman untuk mencoba lagi.</div>
       </section>
