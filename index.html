@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20261014-mono" />
+    <link rel="stylesheet" href="styles.css?v=20261014-sizeguide" />
   </head>
   <body>
     <a class="skip-link" href="#koleksi">Lewati ke koleksi</a>
@@ -83,9 +83,10 @@
     <aside id="saved-panel" class="saved-panel" aria-hidden="true" aria-labelledby="saved-title"><div class="saved-header"><h2 id="saved-title">Pilihanmu</h2><button class="close-saved" type="button" aria-label="Tutup daftar pilihan">×</button></div><div id="saved-list" class="saved-list"><p>Belum ada yang disimpan.</p></div></aside>
     <aside id="cart-panel" class="saved-panel cart-panel" aria-hidden="true" aria-labelledby="cart-title"><div class="saved-header"><h2 id="cart-title">Keranjang</h2><button class="close-cart" type="button" aria-label="Tutup keranjang">×</button></div><div id="cart-list" class="saved-list"><p>Keranjang masih kosong.</p></div><div class="cart-footer"><p>Harga dan ongkir dikonfirmasi setelah data produk tersedia.</p><button id="checkout-button" class="checkout-button" type="button" disabled>Checkout</button></div></aside>
     <dialog id="product-dialog" class="product-dialog"><button class="dialog-close" type="button" aria-label="Tutup detail">×</button><div id="dialog-content"></div></dialog>
+    <dialog id="size-guide-dialog" class="size-guide-dialog"><button class="dialog-close size-guide-close" type="button" aria-label="Tutup panduan ukuran">×</button><img src="sizecart.jpeg" alt="Panduan ukuran kaus ButterLand" /></dialog>
     <dialog id="checkout-dialog" class="checkout-dialog"><button class="dialog-close checkout-close" type="button" aria-label="Tutup checkout">×</button><div class="checkout-content"><p class="eyebrow">Checkout</p><h2>Lengkapi pesanan.</h2><p class="checkout-intro">Isi data pengiriman dan pilih cara pembayaran yang kamu inginkan.</p><div id="checkout-summary" class="checkout-summary"></div><form id="checkout-form"><div class="form-section"><p class="form-section-title">Data pengiriman</p><label>Nama lengkap<input name="name" autocomplete="name" required placeholder="Nama kamu" /></label><label>Nomor WhatsApp<input name="phone" type="tel" autocomplete="tel" required placeholder="08xxxxxxxxxx" /></label><label>Alamat pengiriman<textarea name="address" autocomplete="street-address" required placeholder="Alamat lengkap"></textarea></label></div><fieldset class="payment-section"><legend>Pilih pembayaran</legend><label class="payment-option"><input type="radio" name="payment" value="Transfer bank" required /><span><b>Transfer bank</b><small>Detail rekening dikirim setelah pesanan diterima</small></span><img src="BankPayment.png" alt="Ikon transfer bank" /></label><label class="payment-option"><input type="radio" name="payment" value="QRIS" /><span><b>QRIS</b><small>Bayar dengan aplikasi dompet digital</small></span><img src="Qris.png" alt="Ikon QRIS" /></label></fieldset><button class="checkout-button" type="submit">Kirim pesanan</button><p id="checkout-feedback" class="checkout-feedback" role="status"></p></form></div></dialog>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase-config.js"></script>
-    <script src="script.js?v=20261014-sizes"></script>
+    <script src="script.js?v=20261014-sizeguide"></script>
   </body>
 </html>
