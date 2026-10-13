@@ -40,3 +40,16 @@ drop policy if exists "Admins can delete product images" on storage.objects;
 create policy "Admins can delete product images"
   on storage.objects for delete to authenticated
   using (bucket_id = 'product-images');
+
+insert into storage.buckets (id, name, public)
+values ('payment-proofs', 'payment-proofs', true)
+on conflict (id) do update set public = true;
+
+drop policy if exists "Anyone can upload payment proofs" on storage.objects;
+create policy "Anyone can upload payment proofs"
+  on storage.objects for insert to anon, authenticated
+  with check (bucket_id = 'payment-proofs');
+
+drop policy if exists "Anyone can view payment proofs" on storage.objects;
+create policy "Anyone can view payment proofs"
+  on storage.objects for select using (bucket_id = 'payment-proofs');

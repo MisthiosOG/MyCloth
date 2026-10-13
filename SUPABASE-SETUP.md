@@ -6,6 +6,7 @@
 2. Run every statement from `supabase-schema.sql`.
 3. Open **Authentication → Users → Add user**.
 4. Create the admin email and password used by `admin.html`.
+5. Re-run the full `supabase-schema.sql` after pulling the QRIS proof update. It creates the public `payment-proofs` bucket used to generate proof image URLs.
 
 ## 2. Connect the static site
 
