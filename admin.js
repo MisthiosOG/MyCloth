@@ -1,6 +1,8 @@
 const client = window.myClothSupabase;
 const form = document.querySelector('#product-form');
 const loginForm = document.querySelector('#login-form');
+const loginScreen = document.querySelector('#login-screen');
+const adminScreen = document.querySelector('#admin-screen');
 const fileInput = document.querySelector('#product-image');
 const list = document.querySelector('#admin-list');
 const count = document.querySelector('#admin-count');
@@ -8,8 +10,8 @@ const feedback = document.querySelector('#admin-feedback');
 const loginFeedback = document.querySelector('#login-feedback');
 
 function setLoggedIn(loggedIn) {
-  loginForm.hidden = loggedIn;
-  form.hidden = !loggedIn;
+  loginScreen.hidden = loggedIn;
+  adminScreen.hidden = !loggedIn;
 }
 
 function render(products) {
@@ -37,7 +39,7 @@ loginForm.addEventListener('submit', async event => {
   if (!client) return loginFeedback.textContent = 'Isi URL dan anon key Supabase di supabase-config.js.';
   const data = new FormData(loginForm);
   const { error } = await client.auth.signInWithPassword({ email: data.get('email'), password: data.get('password') });
-  if (error) return loginFeedback.textContent = error.message;
+  if (error) return loginFeedback.textContent = 'Email atau password salah. Coba lagi.';
   setLoggedIn(true);
   await loadProducts();
 });

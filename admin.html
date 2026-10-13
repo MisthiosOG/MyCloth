@@ -4,16 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Butter | Admin produk</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2320221f'/%3E%3Cpath d='M8 8h16v16H8z' fill='%23a95236'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="admin-page">
   <header class="site-header"><div class="header-inner"><a class="wordmark" href="index.html" aria-label="Kembali ke Butter">Butter</a><a class="admin-back" href="index.html">Lihat katalog</a></div></header>
-  <main class="admin-main"><div class="admin-intro"><p class="eyebrow">Butter / Admin</p><h1>Kelola produk.</h1><p>Upload foto, isi detail, lalu terbitkan produk ke katalog utama.</p></div>
-    <section class="admin-layout" aria-label="Panel admin produk">
+  <main class="admin-main">
+    <section id="login-screen" class="login-screen">
+      <div class="admin-intro"><p class="eyebrow">Butter / Admin</p><h1>Masuk dulu.</h1><p>Login untuk mengelola produk Butter.</p></div>
       <form id="login-form" class="admin-form"><h2>Login admin</h2><label>Email<input name="email" type="email" autocomplete="email" required /></label><label>Password<input name="password" type="password" autocomplete="current-password" required /></label><button class="admin-submit" type="submit">Login</button><p id="login-feedback" class="admin-feedback" role="status"></p></form>
-      <form id="product-form" class="admin-form" hidden><h2>Tambah produk</h2><label>Foto produk<input id="product-image" name="image" type="file" accept="image/*" required /><small>JPG, PNG, atau WebP. Maksimal 2 MB.</small></label><label>Nama produk<input name="name" required placeholder="Contoh: Kemeja Linen" /></label><label>Kategori<select name="type" required><option value="Atasan">Atasan</option><option value="Bawahan">Bawahan</option><option value="Outer">Outer</option></select></label><label>Harga<input name="price" required inputmode="numeric" placeholder="Rp 350.000" /></label><label>Stok<input name="stock" type="number" min="0" required placeholder="10" /></label><label>Deskripsi<textarea name="description" required placeholder="Jelaskan bahan, potongan, dan detail produk"></textarea></label><button class="admin-submit" type="submit">Upload product</button><button id="logout-button" type="button">Logout</button><p id="admin-feedback" class="admin-feedback" role="status"></p></form>
-      <section class="admin-products"><div class="admin-products-heading"><div><p class="eyebrow">Terbit di katalog</p><h2>Produk saat ini</h2></div><strong id="admin-count">0 produk</strong></div><div id="admin-list" class="admin-list"><p class="admin-empty">Belum ada produk. Tambahkan produk pertama dari form.</p></div></section>
+    </section>
+    <section id="admin-screen" hidden>
+      <div class="admin-intro"><p class="eyebrow">Butter / Admin</p><h1>Kelola produk.</h1><p>Upload foto, isi detail, lalu terbitkan produk ke katalog utama.</p></div>
+      <section class="admin-layout" aria-label="Panel admin produk">
+        <form id="product-form" class="admin-form"><h2>Tambah produk</h2><label>Foto produk<input id="product-image" name="image" type="file" accept="image/*" required /><small>JPG, PNG, atau WebP. Maksimal 2 MB.</small></label><label>Nama produk<input name="name" required placeholder="Contoh: Kemeja Linen" /></label><label>Kategori<select name="type" required><option value="Atasan">Atasan</option><option value="Bawahan">Bawahan</option><option value="Outer">Outer</option></select></label><label>Harga<input name="price" required inputmode="numeric" placeholder="Rp 350.000" /></label><label>Stok<input name="stock" type="number" min="0" required placeholder="10" /></label><label>Deskripsi<textarea name="description" required placeholder="Jelaskan bahan, potongan, dan detail produk"></textarea></label><button class="admin-submit" type="submit">Upload product</button><button id="logout-button" type="button">Logout</button><p id="admin-feedback" class="admin-feedback" role="status"></p></form>
+        <section class="admin-products"><div class="admin-products-heading"><div><p class="eyebrow">Terbit di katalog</p><h2>Produk saat ini</h2></div><strong id="admin-count">0 produk</strong></div><div id="admin-list" class="admin-list"><p class="admin-empty">Belum ada produk. Tambahkan produk pertama dari form.</p></div></section>
+      </section>
     </section>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
