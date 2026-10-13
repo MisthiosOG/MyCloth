@@ -1,4 +1,4 @@
-:root{--ink:#20221f;--muted:#6d7068;--paper:#f5f1e9;--cream:#e8e0d3;--clay:#a95236;--line:#d8d0c4;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
+:root{--ink:#000;--muted:#555;--paper:#fff;--cream:#f2f2f2;--clay:#000;--line:#d6d6d6;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
 html,body{overflow-x:clip}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 .hero,.catalog-section,.about-section{background:var(--paper)}
@@ -29,3 +29,4 @@ html{scroll-behavior:smooth;scroll-padding-top:72px}
 /* Keep highlight backgrounds clear of descenders such as y and g. */
 .hero h1{line-height:1.1}
 .hero-mark{line-height:1.08;padding-bottom:.14em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.brand-logo{width:48px;height:48px;display:block;object-fit:cover;background:#000}.wordmark{gap:7px}.wordmark strong{background:#000;color:#fff}.wordmark:after{background:#000}.site-header{background:#fff}.site-nav{color:#202020}.site-nav a:hover,.site-nav a:focus-visible,.text-link:hover,.eyebrow,.hero h1 em,.about-section em{color:#000}.hero-mark-clay{background:#000;color:#fff;border-color:#000;box-shadow:4px 4px 0 rgba(0,0,0,.15)}.hero,.catalog-section,.about-section,.site-footer,.saved-panel,.checkout-dialog{background:#fff!important;color:#000}.product-card,.admin-form,.admin-products,.checkout-content input,.checkout-content textarea{background:#fafafa}.cart-button,.checkout-button,.admin-submit{background:#000!important;color:#fff}.cart-button:hover,.cart-button:focus-visible,.checkout-button:hover,.checkout-button:focus-visible,.admin-submit:hover,.admin-submit:focus-visible{background:#222!important}.hero-mark-ink{background:#000;color:#fff}.text-link{border-color:#000}.checkout-content input:focus,.checkout-content textarea:focus{border-color:#000;outline-color:rgba(0,0,0,.2)}
