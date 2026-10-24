@@ -15,7 +15,7 @@ const settingsFeedback = document.querySelector('#settings-feedback');
 let products = [];
 
 function setLoggedIn(loggedIn) { loginScreen.hidden = loggedIn; adminScreen.hidden = !loggedIn; }
-function formatPrice(value) { const raw = String(value ?? '').trim(); if (/^Rp\.?\s*/i.test(raw)) return raw.replace(/^Rp\.?\s*/i, 'Rp. '); const digits = raw.replace(/[^0-9]/g, ''); return digits ? `Rp. ${Number(digits).toLocaleString('id-ID')}` : raw; }
+function formatPrice(value) { const raw = String(value ?? '').trim(); if (/^Rp\.?\s*/i.test(raw)) return `Rp. ${raw.replace(/^Rp\.?\s*/i, '').trim()}`; const digits = raw.replace(/[^0-9]/g, '').replace(/^0+(?=\d)/, ''); return digits ? `Rp. ${Number(digits).toLocaleString('id-ID')}` : raw; }
 function resetForm() { form.reset(); editingId.value = ''; document.querySelector('#product-form-title').textContent = 'Tambah produk'; document.querySelector('#product-submit').textContent = 'Terbitkan produk'; document.querySelector('#cancel-edit').hidden = true; fileInput.required = true; }
 function render(items) {
   products = items;
