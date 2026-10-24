@@ -6,8 +6,11 @@ create table if not exists public.products (
   stock integer not null check (stock >= 0),
   description text not null check (char_length(description) between 1 and 2000),
   image text not null,
+  images jsonb not null default '[]'::jsonb,
   created_at timestamptz not null default now()
 );
+
+alter table public.products add column if not exists images jsonb not null default '[]'::jsonb;
 
 create table if not exists public.catalog_settings (
   id boolean primary key default true check (id = true),
